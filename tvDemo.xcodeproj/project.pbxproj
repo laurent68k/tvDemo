@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D2960F21F155FFC00CBB693 /* AncestorMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2960F11F155FFC00CBB693 /* AncestorMainViewController.swift */; };
 		4DC872E41F155E5D00D7DC31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC872E31F155E5D00D7DC31 /* AppDelegate.swift */; };
-		4DC872E61F155E5D00D7DC31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC872E51F155E5D00D7DC31 /* ViewController.swift */; };
+		4DC872E61F155E5D00D7DC31 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC872E51F155E5D00D7DC31 /* MainViewController.swift */; };
 		4DC872E91F155E5D00D7DC31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC872E71F155E5D00D7DC31 /* Main.storyboard */; };
 		4DC872EB1F155E5D00D7DC31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DC872EA1F155E5D00D7DC31 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D2960F11F155FFC00CBB693 /* AncestorMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AncestorMainViewController.swift; sourceTree = "<group>"; };
 		4DC872E01F155E5D00D7DC31 /* tvDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC872E31F155E5D00D7DC31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DC872E51F155E5D00D7DC31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4DC872E51F155E5D00D7DC31 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4DC872E81F155E5D00D7DC31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DC872EA1F155E5D00D7DC31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DC872EC1F155E5D00D7DC31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +35,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D2960F01F155FD000CBB693 /* Ancestors */ = {
+			isa = PBXGroup;
+			children = (
+				4D2960F11F155FFC00CBB693 /* AncestorMainViewController.swift */,
+			);
+			name = Ancestors;
+			sourceTree = "<group>";
+		};
+		4D2960F31F15607A00CBB693 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4DC872E51F155E5D00D7DC31 /* MainViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		4DC872D71F155E5D00D7DC31 = {
 			isa = PBXGroup;
 			children = (
@@ -52,8 +70,9 @@
 		4DC872E21F155E5D00D7DC31 /* tvDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4D2960F01F155FD000CBB693 /* Ancestors */,
+				4D2960F31F15607A00CBB693 /* Controllers */,
 				4DC872E31F155E5D00D7DC31 /* AppDelegate.swift */,
-				4DC872E51F155E5D00D7DC31 /* ViewController.swift */,
 				4DC872E71F155E5D00D7DC31 /* Main.storyboard */,
 				4DC872EA1F155E5D00D7DC31 /* Assets.xcassets */,
 				4DC872EC1F155E5D00D7DC31 /* Info.plist */,
@@ -133,7 +152,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DC872E61F155E5D00D7DC31 /* ViewController.swift in Sources */,
+				4D2960F21F155FFC00CBB693 /* AncestorMainViewController.swift in Sources */,
+				4DC872E61F155E5D00D7DC31 /* MainViewController.swift in Sources */,
 				4DC872E41F155E5D00D7DC31 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +276,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.laurent68k.tvos.tvDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -270,6 +291,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.laurent68k.tvos.tvDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -292,6 +314,7 @@
 				4DC872F11F155E5D00D7DC31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

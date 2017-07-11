@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  tvDemo
+//  Addition
 //
 //  Created by Laurent on 11/07/2017.
 //  Copyright © 2017 Laurent68k. All rights reserved.
@@ -31,10 +31,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "applicationWillEnterForeground"), object: nil)
+
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "applicationDidBecomeActive"), object: nil)
+
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
