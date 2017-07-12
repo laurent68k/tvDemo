@@ -51,6 +51,13 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		4D3BA2EB1F161495007E0C64 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		4DC872D71F155E5D00D7DC31 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +77,7 @@
 		4DC872E21F155E5D00D7DC31 /* tvDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4D3BA2EB1F161495007E0C64 /* Classes */,
 				4D2960F01F155FD000CBB693 /* Ancestors */,
 				4D2960F31F15607A00CBB693 /* Controllers */,
 				4DC872E31F155E5D00D7DC31 /* AppDelegate.swift */,

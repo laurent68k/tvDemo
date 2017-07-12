@@ -59,18 +59,18 @@ class AncestorMainViewController: UIViewController {
     
     @objc private func applicationWillEnterForeground() {
         
-        self.pauseAnimation(self.imageDad.layer)
-        self.pauseAnimation(self.imageMom.layer)
-        self.pauseAnimation(self.imageCat.layer)
+        self.imageDad.layer.removeAnimation(forKey: "r3")
+        self.imageMom.layer.removeAnimation(forKey: "rotate")
+        self.imageCat.layer.removeAnimation(forKey: "rotate")
     }
     
     /// ---------------------------------------------------------------------------------------------------------------------------------------------
     
     @objc private func applicationDidBecomeActive() {
         
-        self.resumeAnimation(self.imageDad.layer)
-        self.resumeAnimation(self.imageMom.layer)
-        self.resumeAnimation(self.imageCat.layer)
+        self.start3DRotateAnimation()
+        self.start2DRotateAnimation(self.imageMom, direction:.left)
+        self.start2DRotateAnimation(self.imageCat, direction:.right)
     }
     
     /// ---------------------------------------------------------------------------------------------------------------------------------------------
@@ -91,34 +91,40 @@ class AncestorMainViewController: UIViewController {
     
     private func start3DRotateAnimation(_ duration: TimeInterval = 10) {
         
-        let animation = CABasicAnimation(keyPath: "transform.rotation.y")
-        
-        animation.fromValue = 0.0
-        animation.toValue = CGFloat(.pi * 2.0)
-        
-        animation.duration = duration
-        animation.repeatCount = Float.greatestFiniteMagnitude
-        
-        self.imageDad.layer.add(animation, forKey: "r3")
+        if self.imageDad.layer.animation(forKey: "r3") == nil {
+            
+            let animation = CABasicAnimation(keyPath: "transform.rotation.y")
+            
+            animation.fromValue = 0.0
+            animation.toValue = CGFloat(.pi * 2.0)
+            
+            animation.duration = duration
+            animation.repeatCount = Float.greatestFiniteMagnitude
+            
+            self.imageDad.layer.add(animation, forKey: "r3")
+        }
     }
     
     private func start2DRotateAnimation(_ viewObject :UIView, direction: RotateDirection, duration: TimeInterval = 5) {
         
-        let animation = CABasicAnimation(keyPath: "transform.rotation")
-        
-        if direction == .left {
-            animation.fromValue = 0.0
-            animation.toValue = CGFloat(.pi * 2.0)
+        if viewObject.layer.animation(forKey: "rotate") == nil {
+            
+            let animation = CABasicAnimation(keyPath: "transform.rotation")
+            
+            if direction == .left {
+                animation.fromValue = 0.0
+                animation.toValue = CGFloat(.pi * 2.0)
+            }
+            else {
+                animation.fromValue = CGFloat(.pi * 2.0)
+                animation.toValue = 0.0
+            }
+            
+            animation.duration = duration
+            animation.repeatCount = Float.greatestFiniteMagnitude
+            
+            viewObject.layer.add(animation, forKey: "rotate")
         }
-        else {
-            animation.fromValue = CGFloat(.pi * 2.0)
-            animation.toValue = 0.0
-        }
-        
-        animation.duration = duration
-        animation.repeatCount = Float.greatestFiniteMagnitude
-        
-        viewObject.layer.add(animation, forKey: "rotate")
     }
     
     /// ---------------------------------------------------------------------------------------------------------------------------------------------
